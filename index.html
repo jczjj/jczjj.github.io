@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with HTML & CSS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>My Kitchen Appliances</h1>
+
+        <div class="room-card">
+            <div class="room-info">
+                <div class="room-name">Refrigerator</div>
+            </div>
+            <div class="temperature" id="fridgeTemp">20°</div>
+            <label class="switch">
+                <input type="checkbox" id="fridgeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <button id="manualClose" class="btn" disabled>Close Fridge</button>
+
+        <div class="room-card">
+            <div class="room-info">
+                <div class="room-name">Salt Dispensor</div>
+            </div>
+            <label class="button_label">
+                <button type="button" class="dispenser_button" onclick="dispense_onclick()">Dispense</button>    
+            </label>
+        </div>
+        <div class="room-card">
+            <div class="room-info">
+                <div class="room-name">Lights</div>
+            </div>
+            <label class="switch">
+                <input type="checkbox" class="toggleSlider">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
